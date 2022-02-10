@@ -36,11 +36,11 @@ export default defineComponent({
         if (term.value == "") return true;
 
         // If its in the name
-        if (icon.name.toLowerCase().indexOf(term.value) > -1) {
+        if (icon.name.toLowerCase().indexOf(term.value.toLowerCase()) > -1) {
           returnValue = true;
         }
         // If its in the entity
-        if (icon.entity.toLowerCase().indexOf(term.value) > -1) {
+        if (icon.entity.toLowerCase().indexOf(term.value.toLowerCase()) > -1) {
           returnValue = true;
         }
 
