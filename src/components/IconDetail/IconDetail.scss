@@ -48,10 +48,18 @@
     }
   }
 
-  &__icon {
+  &__icon-wrapper {
     @media screen and (max-width: 720px) {
       width: 25%;
       height: 100%;
+    }
+  }
+  &__icon {
+    @media screen and (max-width: 720px) {
+      flex-shrink: 0;
+      margin: 0;
+      height: 100%;
+      border-radius: v(borderRadius) 0 0 v(borderRadius);
     }
     font-size: v(space);
     display: block;

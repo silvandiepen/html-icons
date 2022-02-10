@@ -23,5 +23,10 @@
       font-weight: 600;
       color: v(foreground);
     }
+    @media screen and (max-width: 720px) {
+      span {
+        display: none;
+      }
+    }
   }
 }
