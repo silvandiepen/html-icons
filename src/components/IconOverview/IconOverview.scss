@@ -40,36 +40,16 @@
   &__categories {
     width: 100%;
     position: relative;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: v(space-s);
-      height: 100%;
-      top: 0;
-      background-image: linear-gradient(
-        var(--direction, to right),
-        #{v(background)},
-        transparent
-      );
-    }
-    &::before {
-      left: 0;
-    }
-    &::after {
-      --direction: to left;
-      right: 0;
-    }
     @media screen and (max-width: 1024px) {
       padding: v(space-s) 0;
     }
   }
   &__category-list {
     display: flex;
-    overflow: scroll;
     gap: 0.5em;
     justify-content: center;
+    flex-wrap: wrap;
+
     @media screen and (max-width: 1024px) {
       padding: v(space-s);
     }
