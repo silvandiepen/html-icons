@@ -1,4 +1,4 @@
-<div :class="style.bem()">
+<div :class="[style.bem(), style.bem('', position)]">
   <div :class="style.bem('content')">
     <slot></slot>
   </div>
