@@ -15,10 +15,10 @@
     #{$block} {
       &__icon {
         background-color: v(foreground);
-        color: v(foregroundText);
+        color: v(foreground25);
       }
       &__favorite {
-        color: v(foregroundText);
+        color: v(foreground75);
       }
     }
   }
@@ -42,6 +42,9 @@
     font-size: 1em;
     &::before {
       content: "\2605";
+    }
+    &:hover::before {
+      color: v(primary);
     }
   }
 

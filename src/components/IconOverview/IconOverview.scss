@@ -76,9 +76,16 @@
     border-radius: v(borderRadius);
     background-color: v(background75);
 
+    &:hover {
+      background-color: v(background50);
+    }
+
     &--active {
       background-color: v(primary);
       color: v(primaryText);
+      &:hover {
+        background-color: v(primary90);
+      }
     }
     &--inactive {
       opacity: 0.5;
