@@ -1,6 +1,9 @@
 .header {
   padding: v(space-s);
   padding-bottom: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   &__container {
     padding: v(space-s);
     background-color: v(background90);

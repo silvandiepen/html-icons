@@ -24,6 +24,9 @@
     span {
       opacity: 0.5;
     }
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
   }
 
   &__header {
