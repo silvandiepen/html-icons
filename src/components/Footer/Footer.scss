@@ -1,0 +1,26 @@
+.footer {
+  padding: v(space);
+  background-color: black;
+  &__tags {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+  &__tag {
+    border: none;
+    background-color: transparent;
+    color: v(background50);
+    &::before {
+      content: "#";
+    }
+    border: 1px solid v(background90);
+    display: block;
+    padding: 0.5em;
+    border-radius: v(borderRadius);
+    &:hover {
+      color: v(background10);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+$theme-base: (
+  borderRadius: 4px,
+  space: max(calc(100vw / 24), 2em),
+  space-s: max(calc(100vw / 48), 1em),
+);
+$theme-color: (
+  primary: rgb(81, 248, 192),
+  secondary: rgb(248, 81, 137),
+);

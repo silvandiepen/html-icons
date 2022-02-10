@@ -1,0 +1,5 @@
+<div :class="[style.bem(),,style.bem('',colorMode)]" @click="switchColorMode">
+  <button :class="[style.bem('button'),style.bem('button',colorMode)]">
+    {{oppositeMode}}
+  </button>
+</div>

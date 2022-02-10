@@ -1,0 +1,15 @@
+<div :class="style.bem()">
+  <div
+    :class="[style.bem('container'),style.bem('container',isActiveSearch ? 'active' : 'inactive')]"
+  >
+    <input
+      :class="style.bem('control')"
+      type="text"
+      ref="searchInput"
+      :value="searchTerm"
+      placeholder="Search icons"
+      @input="setSearch"
+    />
+    <button :class="style.bem('trigger')" @click="toggleSearch">Search</button>
+  </div>
+</div>

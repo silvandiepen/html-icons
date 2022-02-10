@@ -1,0 +1,27 @@
+.header {
+  padding: v(space-s);
+  padding-bottom: 0;
+  &__container {
+    padding: v(space-s);
+    background-color: v(background90);
+    color: v(background90Text);
+    border-radius: v(borderRadius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  &__logo {
+    font-size: 1.25em;
+    color: v(background25);
+    font-weight: 300;
+    strong {
+      font-weight: 600;
+      color: v(foreground);
+    }
+  }
+}

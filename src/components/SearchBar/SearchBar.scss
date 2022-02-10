@@ -1,0 +1,61 @@
+.search-bar {
+  position: relative;
+  &__control {
+    border: none;
+    border-radius: v(borderRadius);
+    font-size: 1em;
+    padding: 0.35em 1em;
+    border-radius: 2em;
+    position: absolute;
+    right: 0;
+    color: v(foreground);
+    opacity: 0;
+    background-color: v(background);
+    transform: scale(1, 0.9);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    &:focus {
+      opacity: 1;
+      transform: scale(1);
+      // background-color: v(foreground);
+      // color: v(foregroundText);
+      outline: none;
+    }
+  }
+  &__trigger {
+    width: 2.25em;
+    height: 2.25em;
+    border: none;
+    border-radius: 50%;
+    text-indent: -999em;
+    position: relative;
+    color: v(foreground50);
+    background-color: transparent;
+    box-shadow: 0 0 0 2px currentColor inset;
+    &::before {
+      content: "";
+      width: 0.75em;
+      height: 0.75em;
+      position: absolute;
+      border: 1px solid currentColor;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+    &::after {
+      content: "";
+      width: 1px;
+      height: 0.5em;
+      position: absolute;
+      background-color: currentColor;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(0.5em, 0.25em) rotate(-45deg);
+    }
+    &:hover {
+      color: v(foreground);
+    }
+  }
+}

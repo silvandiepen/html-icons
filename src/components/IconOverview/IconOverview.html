@@ -1,0 +1,31 @@
+<div :class="style.bem()">
+  <div :class="style.bem('header')">
+    <div :class="style.bem('title')">
+      <h3>Icons</h3>
+      <span v-if="searchTerm">filter by: {{searchTerm}}</span>
+    </div>
+    <div :class="style.bem('categories')">
+      <ul :class="style.bem('category-list')">
+        <li
+          v-for="cat,idx in categories"
+          :key="idx"
+          :class="[style.bem('category'),cat === category ? style.bem('category','active') : category ? style.bem('category','inactive') :'' ]"
+          @click="setCategory(cat)"
+        >
+          {{cat}}
+        </li>
+      </ul>
+    </div>
+    <span :class="style.bem('total')">
+      total icons: <strong>{{filteredIcons.length}}</strong></span
+    >
+  </div>
+  <div :class="style.bem('container')">
+    <IconDetail
+      :class="style.bem('item')"
+      v-for="icon, index in filteredIcons"
+      :key="index"
+      :icon="icon"
+    />
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div
+  :class="[style.bem(),isFavorite ? style.bem('','favorite') : ''] "
+  :data-icon="icon.character"
+>
+  <button @click="toggleFavorite" :class="[style.bem('favorite')]"></button>
+  <div :class="style.bem('icon-wrapper')">
+    <div :class="style.bem('icon')">{{icon.character}}</div>
+  </div>
+  <div :class="style.bem('content')">
+    <div :class="style.bem('title')">{{icon.name}}</div>
+
+    <dl
+      :class="style.bem('details')"
+      v-for="detail,idx in details"
+      :key="idx"
+      @click="copyCode(detail.code)"
+    >
+      <dt>{{detail.name}}</dt>
+      <dd>{{detail.code}}</dd>
+    </dl>
+  </div>
+</div>
