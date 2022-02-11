@@ -14,8 +14,8 @@
   &--favorite {
     #{$block} {
       &__icon {
-        background-color: v(foreground);
-        color: v(foreground25);
+        background-color: v(secondary25);
+        color: v(secondary25Text);
       }
       &__favorite {
         color: v(foreground75);
@@ -66,8 +66,8 @@
     margin: auto;
     padding: 1em;
     text-align: center;
-    background-color: v(foreground10);
-    color: v(foreground10Text);
+    background-color: v(background90);
+    color: v(background90Text);
     border-radius: v(borderRadius) v(borderRadius) 0 0;
   }
   &__content {

@@ -20,7 +20,10 @@
       total icons: <strong>{{filteredIcons.length}}</strong></span
     >
   </div>
-  <div :class="style.bem('container')">
+  <div v-if="isLoading" :class="style.bem('loading')">
+    <div :class="style.bem('loader')"></div>
+  </div>
+  <div v-else :class="style.bem('container')">
     <IconDetail
       :class="style.bem('item')"
       v-for="icon, index in filteredIcons"

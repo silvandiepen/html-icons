@@ -17,6 +17,7 @@ export default defineComponent({
       getCategories,
       getCurrentCategory,
       setCurrentCategory,
+      isLoading,
     } = useIcons();
     const { getSearchTerm } = useUI();
 
@@ -68,6 +69,7 @@ export default defineComponent({
     });
 
     return {
+      isLoading,
       category: getCurrentCategory,
       categories: getCategories,
       setCategory,

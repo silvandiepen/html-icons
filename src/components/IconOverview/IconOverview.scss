@@ -84,4 +84,62 @@
   &__total {
     flex-shrink: 0;
   }
+  &__loading {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @at-root {
+    @keyframes rotate {
+      to {
+        transform: translate(var(--translate), var(--translate)) rotate(360deg);
+      }
+    }
+    @keyframes rotate-backwards {
+      to {
+        transform: translate(var(--translate), var(--translate)) rotate(-360deg);
+      }
+    }
+  }
+  &__loader {
+    border: 3px solid v(background90);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    width: v(space-xl);
+    height: v(space-xl);
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 5s ease-in-out infinite;
+    transform: translate(var(--translate), var(--translate)) rotate(0deg);
+    --translate: 0%;
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(var(--translate), var(--translate)) rotate(0deg);
+      border-radius: 50%;
+      --translate: -50%;
+    }
+    &::before {
+      border: 3px solid v(secondary);
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      width: v(space-l);
+      height: v(space-l);
+      animation: rotate-backwards 4s ease-in-out infinite;
+    }
+    &::after {
+      border: 3px solid v(background75);
+      border-right-color: transparent;
+      border-top-color: transparent;
+      width: v(space-s);
+      height: v(space-s);
+      animation: rotate 3s ease-in-out infinite;
+    }
+  }
 }

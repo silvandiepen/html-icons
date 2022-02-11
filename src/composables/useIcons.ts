@@ -1,5 +1,5 @@
 import { computed, reactive } from "vue";
-import { Icon } from "../data/icons/icons.model";
+import { Icon, Icons } from "../data/icons/icons.model";
 
 import iconList from "../data/icons";
 
@@ -7,6 +7,7 @@ interface IconState {
   icons: Icon[];
   category: string;
   favorites: string[];
+  loading: boolean;
 }
 
 enum localKeys {
@@ -17,17 +18,22 @@ const iconState = reactive<IconState>({
   icons: [],
   category: "",
   favorites: [],
+  loading: true,
 });
 
 export const useIcons = () => {
-  const initIcons = () => {
+  const initIcons = async () => {
     loadFavorites();
-    setIcons();
+    await setIcons();
   };
 
-  const setIcons = (force = false) => {
+  const setIcons = async (force = false) => {
     if (force) iconState.icons.length = 0;
     if (iconState.icons.length > 1) return;
+
+    let iconList: Icons = await fetch("icons.json").then((res) => {
+      return res.json();
+    });
 
     Object.keys(iconList).forEach((category) => {
       iconList[category].forEach((icon) => {
@@ -38,6 +44,8 @@ export const useIcons = () => {
         });
       });
     });
+
+    if (iconState.icons.length > 0) iconState.loading = false;
   };
   const getCurrentCategory = computed(() => {
     return iconState.category;
@@ -108,11 +116,14 @@ export const useIcons = () => {
     }
   });
 
+  const isLoading = computed(() => iconState.loading);
+
   return {
     getIcons,
     getCurrentCategory,
     getCategories,
     getTags,
+    isLoading,
     initIcons,
     setCurrentCategory,
     isFavoriteIcon,
