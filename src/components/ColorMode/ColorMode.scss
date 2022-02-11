@@ -1,19 +1,17 @@
 .color-mode {
   padding: 1em;
   position: relative;
-  background-color: v(background);
-  // border-radius: v(borderRadius);
+  background-color: transparent;
+  border: 2px solid v(background50);
+  color: v(background50);
   border-radius: 50%;
   display: block;
   overflow: hidden;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(174, 232, 255),
-    rgb(0, 0, 82)
-  );
+  width: 1rem;
+  height: 1rem;
   background-size: 100% 300%;
-
   transition: background 2s ease-in-out;
+
   &--light {
     background-position: 0 0%;
   }
@@ -22,12 +20,10 @@
   }
 
   &__button {
-    --color-mode-size: 1rem;
+    --color-mode-size: 1.5rem;
     position: absolute;
     width: var(--color-mode-size);
     height: calc(var(--color-mode-size) * 10);
-
-    text-indent: -999em;
     background-color: transparent;
     border: none;
     padding: 0;
@@ -52,25 +48,27 @@
 
     &::after,
     &::before {
-      content: "";
+      content: "\263C";
 
       width: var(--color-mode-size);
       height: var(--color-mode-size);
       display: block;
       position: absolute;
-
-      border-radius: 50%;
+      line-height: 1;
+      font-size: 1.5rem;
+      color: v(background50);
     }
     &::before {
-      background-color: rgb(255, 233, 137);
-      box-shadow: 0 0 calc(var(--color-mode-size) / 2) 0 white;
+      // background-color: rgb(255, 233, 137);
+      // box-shadow: 0 0 calc(var(--color-mode-size) / 2) 0 white;
       top: 0;
     }
     &::after {
+      content: "\263D";
       bottom: 0;
-      background-color: transparent;
-      box-shadow: calc((var(--color-mode-size) / 2) * -1) 0px 0
-        calc(var(--color-mode-size) / 24) white inset;
+      // background-color: transparent;
+      // box-shadow: calc((var(--color-mode-size) / 2) * -1) 0px 0
+      //   calc(var(--color-mode-size) / 24) white inset;
     }
   }
 }

@@ -22,6 +22,7 @@ export default defineComponent({
 </script>
 
 <template>
+  <div></div>
   <HeaderComponent></HeaderComponent>
   <IconOverviewComponent></IconOverviewComponent>
   <FooterComponent></FooterComponent>

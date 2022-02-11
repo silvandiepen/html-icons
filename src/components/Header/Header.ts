@@ -10,6 +10,7 @@ export default defineComponent({
   },
   setup() {
     const style = new Style("header");
+
     return {
       style,
     };

@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sil/themer": "^0.1.13",
+    "@sil/themer": "^0.2.0",
     "@sil/tools": "^0.1.15",
     "sass": "^1.49.7",
     "vue": "^3.2.25"
