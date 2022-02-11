@@ -6,6 +6,7 @@ import iconList from "../data/icons";
 interface IconState {
   icons: Icon[];
   category: string;
+  categories: string[];
   favorites: string[];
   loading: boolean;
 }
@@ -35,6 +36,8 @@ export const useIcons = () => {
       return res.json();
     });
 
+    iconState.categories = Object.keys(iconList);
+
     Object.keys(iconList).forEach((category) => {
       iconList[category].forEach((icon) => {
         iconState.icons.push({
@@ -56,7 +59,7 @@ export const useIcons = () => {
   };
 
   const getCategories = computed(() => {
-    return Object.keys(iconList);
+    return iconState.categories;
   });
 
   const getTags = computed(() => {

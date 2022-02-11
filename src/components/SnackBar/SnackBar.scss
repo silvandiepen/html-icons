@@ -6,6 +6,7 @@
     var(--snackbar-translate-y, 0)
   );
   padding: v(space-s);
+  z-index: 2;
 
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
@@ -56,6 +57,7 @@
 
   &__content {
     background-color: v(secondary);
+    color: v(secondaryText);
     border-radius: v(borderRadius);
     padding: v(space-s);
   }

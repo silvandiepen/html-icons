@@ -5,13 +5,14 @@
   top: 0;
   z-index: 1;
   &__container {
-    padding: v(space-s);
+    padding: v(space-xs);
     background-color: v(background90);
     color: v(background90Text);
     border-radius: v(borderRadius);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 v(space-s) 0 v(background);
   }
   &__actions {
     display: flex;
