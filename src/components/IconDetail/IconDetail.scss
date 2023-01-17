@@ -7,7 +7,7 @@
   border-radius: v(borderRadius);
   position: relative;
 
-  @media screen and (max-width: 720px) {
+  @media #{bp(small)} {
     display: flex;
   }
 
@@ -49,13 +49,13 @@
   }
 
   &__icon-wrapper {
-    @media screen and (max-width: 720px) {
+    @media #{bp(small)} {
       width: 25%;
       height: 100%;
     }
   }
   &__icon {
-    @media screen and (max-width: 720px) {
+    @media #{bp(small)} {
       flex-shrink: 0;
       margin: 0;
       height: 100%;
